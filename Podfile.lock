@@ -1,0 +1,20 @@
+PODS:
+  - PepperTalkSDK-iOS (1.0.8-beta.1)
+
+DEPENDENCIES:
+  - PepperTalkSDK-iOS (from `https://github.com/Espreccino/PepperTalkSDK-iOS.git`, tag `1.0.9`)
+
+EXTERNAL SOURCES:
+  PepperTalkSDK-iOS:
+    :git: https://github.com/Espreccino/PepperTalkSDK-iOS.git
+    :tag: 1.0.9
+
+CHECKOUT OPTIONS:
+  PepperTalkSDK-iOS:
+    :git: https://github.com/Espreccino/PepperTalkSDK-iOS.git
+    :tag: 1.0.9
+
+SPEC CHECKSUMS:
+  PepperTalkSDK-iOS: 231716990f4af7032fbf8012e8425a710453f11f
+
+COCOAPODS: 0.36.0.beta.1

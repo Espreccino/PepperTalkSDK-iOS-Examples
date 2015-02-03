@@ -77,7 +77,7 @@
         case 1:
         {
             //Please note that a valid chat session will returned only if login went throught successfully.
-            PTChatSessionController *chatSessionView = [[PepperTalk sharedInstance] chatSessionWithParticipant:_otherPartyUsername sessionOptons:nil error:NULL];
+            UIViewController<PTChatSessionAppearanceProtocol> *chatSessionView = [[PepperTalk sharedInstance] chatSessionWithParticipant:_otherPartyUsername sessionOptons:nil error:NULL];
             if(chatSessionView) {
                 [self.navigationController pushViewController:chatSessionView animated:YES];
             }

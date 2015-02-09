@@ -3,7 +3,7 @@
 ### Introduction
 This is a sample app to demonstrate the iOS SDK for Pepper Talk.
 
-### Run Example
+### Steps to Setup & Run Pepper Talk Sample App
 #### Download PepperTalkSDK-iOS-Examples
 * git clone https://github.com/Espreccino/PepperTalkSDK-iOS-Examples.git
 
@@ -15,7 +15,7 @@ This is a sample app to demonstrate the iOS SDK for Pepper Talk.
 #### Setup Without Cocoapods
 * If you don't want to use Cocoapods follow the Manual section from [PepperTalkSDK-iOS Documentation](https://github.com/Espreccino/PepperTalkSDK-iOS#download-sdk)
 
-#### Run Example
+#### Run Sample App
 * Open PepperTalkExamples.xcworkspace
 * Build & Run Example-Programmatic project for simulator
 * When asked to select user, select User1

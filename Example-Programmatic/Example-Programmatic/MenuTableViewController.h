@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuTableViewController : UITableViewController
+@interface MenuTableViewController : UITableViewController<UIActionSheetDelegate>
 
 @end

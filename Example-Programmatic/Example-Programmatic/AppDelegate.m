@@ -30,8 +30,6 @@
         PepperTalk *pepperTalkInstance = [PepperTalk sharedInstance];
         pepperTalkInstance.clientId = clientId;
         pepperTalkInstance.clientSecret = clientSecret;
-        [pepperTalkInstance setLoggedInUserWithUsername:@"a@a.com" fullName:@"User A" profilePicture:nil completion:^(NSError *loginError) {
-        }];
     }
     return YES;
 }

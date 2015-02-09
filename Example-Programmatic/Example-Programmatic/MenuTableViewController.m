@@ -9,13 +9,18 @@
 #import "MenuTableViewController.h"
 #import <PepperTalk/PepperTalkSDK.h>
 
+#define LOGGED_IN_USERNAME_KEY @"LOGGED_IN_USERNAME"
+#define TARGET_USERNAME_KEY @"TARGET_USERNAME"
+
 @interface MenuTableViewController ()
 
 @end
 
 @implementation MenuTableViewController {
     
-    NSString *_otherPartyUsername;
+    NSString *_loggedInUserName;
+    NSString *_targetUsername;
+    NSDictionary *_usernamesDict;
 }
 
 - (void)viewDidLoad {
@@ -26,12 +31,55 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _otherPartyUsername = @"b@b.com";
+    
+    _usernamesDict = @{@"user1@example.com":@"User 1",
+                       @"user2@example.com":@"User 2"};
+    
+    
+    NSUserDefaults *sud = [NSUserDefaults standardUserDefaults];
+    _loggedInUserName = [sud stringForKey:LOGGED_IN_USERNAME_KEY];
+    _targetUsername = [sud stringForKey:TARGET_USERNAME_KEY];
+    if(!_loggedInUserName || !_targetUsername) {
+        
+        [self showLoggedInUserSelection];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) showLoggedInUserSelection {
+    
+    NSArray *allUsersFullNamesArr = [_usernamesDict allValues];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Select User To Login" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:allUsersFullNamesArr[0],allUsersFullNamesArr[1], nil];
+    [actionSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    NSArray *allUsersArr = [_usernamesDict allKeys];
+    if(buttonIndex == 0) {
+        _loggedInUserName = allUsersArr[0];
+        _targetUsername = allUsersArr[1];
+    } else {
+        _loggedInUserName = allUsersArr[1];
+        _targetUsername = allUsersArr[0];
+    }
+    
+    NSUserDefaults *sud = [NSUserDefaults standardUserDefaults];
+    [sud setObject:_loggedInUserName forKey:LOGGED_IN_USERNAME_KEY];
+    [sud setObject:_targetUsername forKey:TARGET_USERNAME_KEY];
+    [sud synchronize];
+    
+    [self loginToPepperTalkWithSelecterUser];
+}
+
+- (void) loginToPepperTalkWithSelecterUser {
+    
+    [[PepperTalk sharedInstance] setLoggedInUserWithUsername:_loggedInUserName fullName:[_usernamesDict objectForKey:_loggedInUserName] profilePicture:nil completion:^(NSError *loginError) {
+    }];
 }
 
 #pragma mark - Table view data source
@@ -71,13 +119,13 @@
         case 0:
         {
             //Please note that the chat session will be presented only if login went throught successfully.
-            [[PepperTalk sharedInstance] presentChatSessionWithParticipant:_otherPartyUsername sessionOptons:nil presentingViewController:self];
+            [[PepperTalk sharedInstance] presentChatSessionWithParticipant:_targetUsername sessionOptons:nil presentingViewController:self];
         }
             break;
         case 1:
         {
             //Please note that a valid chat session will returned only if login went throught successfully.
-            UIViewController *chatSessionView = [[PepperTalk sharedInstance] chatSessionWithParticipant:_otherPartyUsername sessionOptons:nil error:NULL];
+            UIViewController *chatSessionView = [[PepperTalk sharedInstance] chatSessionWithParticipant:_targetUsername sessionOptons:nil error:NULL];
             if(chatSessionView) {
                 [self.navigationController pushViewController:chatSessionView animated:YES];
             }

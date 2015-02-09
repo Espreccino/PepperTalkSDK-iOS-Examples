@@ -5,4 +5,4 @@ platform :ios, '7.1'
 workspace 'PepperTalkExamples'
 
 xcodeproj 'Example-Programmatic/Example-Programmatic.xcodeproj'
-pod 'PepperTalkSDK-iOS', '1.0.12'
+pod 'PepperTalkSDK-iOS', '1.0.15'

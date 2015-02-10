@@ -15,7 +15,7 @@ This is a sample app to demonstrate the iOS SDK for Pepper Talk.
 #### Setup Without Cocoapods
 * If you don't want to use Cocoapods follow the Manual section from [PepperTalkSDK-iOS Documentation](https://github.com/Espreccino/PepperTalkSDK-iOS#download-sdk) to download the required files [Dependecies Resources](https://github.com/Espreccino/PepperTalkSDK-iOS/tree/master/Dependencies%20Resources) & [Framework](https://github.com/Espreccino/PepperTalkSDK-iOS/tree/master/PepperTalk.embeddedframework)
 * Remove libPods.a from Build Phases->Link binary with libraries section
-* Add icucore.dylib in Build Phases->Link binary with libraries section
+* Add libicucore.dylib in Build Phases->Link binary with libraries section
 * Add -ObjC to Build Settings->Other Linker Flags if already not present
 
 #### Run Sample App

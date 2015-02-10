@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E9AB914767DDAB2A7C3F7E71 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18ECF0CB94FE840C2B677B /* libPods.a */; };
 		F46211221A7B6D150055C8CB /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F46211211A7B6D150055C8CB /* MenuTableViewController.m */; };
 		F4B2E8201A7B4C3200B2D0E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B2E81F1A7B4C3200B2D0E8 /* main.m */; };
 		F4B2E8231A7B4C3200B2D0E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B2E8221A7B4C3200B2D0E8 /* AppDelegate.m */; };
@@ -29,9 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		785D68329D7BB4DF352C2C20 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8F18ECF0CB94FE840C2B677B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF251294B6C8EA9C53F7A961 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F46211201A7B6D150055C8CB /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
 		F46211211A7B6D150055C8CB /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		F4B2E81A1A7B4C3200B2D0E8 /* Example-Programmatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-Programmatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9AB914767DDAB2A7C3F7E71 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,15 +71,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F39E35FF0CDF4F743B8521E8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				785D68329D7BB4DF352C2C20 /* Pods.debug.xcconfig */,
-				EF251294B6C8EA9C53F7A961 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		F4B2E8111A7B4C3200B2D0E8 = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +78,6 @@
 				F4B2E8361A7B4C3200B2D0E8 /* Example-ProgrammaticTests */,
 				F4B2E81B1A7B4C3200B2D0E8 /* Products */,
 				5B3C8DF79DC486C8D568C502 /* Frameworks */,
-				F39E35FF0CDF4F743B8521E8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,7 +142,6 @@
 				F4B2E8161A7B4C3200B2D0E8 /* Sources */,
 				F4B2E8171A7B4C3200B2D0E8 /* Frameworks */,
 				F4B2E8181A7B4C3200B2D0E8 /* Resources */,
-				621D406D010DB6DA021B2E76 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,24 +227,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		621D406D010DB6DA021B2E76 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4B2E8161A7B4C3200B2D0E8 /* Sources */ = {
@@ -388,7 +355,6 @@
 		};
 		F4B2E83E1A7B4C3200B2D0E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 785D68329D7BB4DF352C2C20 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Example-Programmatic/Info.plist";
@@ -403,7 +369,6 @@
 		};
 		F4B2E83F1A7B4C3200B2D0E8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF251294B6C8EA9C53F7A961 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Example-Programmatic/Info.plist";

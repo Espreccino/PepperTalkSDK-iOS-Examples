@@ -29,7 +29,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8F18ECF0CB94FE840C2B677B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43637551A89E54D001530DB /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		F46211201A7B6D150055C8CB /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
 		F46211211A7B6D150055C8CB /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
@@ -70,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				F43637551A89E54D001530DB /* libicucore.dylib */,
-				8F18ECF0CB94FE840C2B677B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

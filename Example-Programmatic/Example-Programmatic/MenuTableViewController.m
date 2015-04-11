@@ -42,6 +42,8 @@
     if(!_loggedInUserName || !_targetUsername) {
         
         [self showLoggedInUserSelection];
+    } else {
+        [self loginToPepperTalkWithSelecterUser];
     }
 }
 
@@ -78,7 +80,7 @@
 
 - (void) loginToPepperTalkWithSelecterUser {
     
-    [[PepperTalk sharedInstance] setLoggedInUserWithUsername:_loggedInUserName fullName:[_usernamesDict objectForKey:_loggedInUserName] profilePicture:nil completion:^(NSError *loginError) {
+    NSError *loginErr = [[PepperTalk sharedInstance] initialiseWithUsername:_loggedInUserName fullName:[_usernamesDict objectForKey:_loggedInUserName] profilePicture:nil completion:^(NSError *completionErr) {
     }];
 }
 

@@ -42,6 +42,8 @@
     if(!_loggedInUserName || !_targetUsername) {
         
         [self showLoggedInUserSelection];
+    } else {
+        [self loginToPepperTalkWithSelecterUser];
     }
 }
 
@@ -78,7 +80,7 @@
 
 - (void) loginToPepperTalkWithSelecterUser {
     
-    [[PepperTalk sharedInstance] setLoggedInUserWithUsername:_loggedInUserName fullName:[_usernamesDict objectForKey:_loggedInUserName] profilePicture:nil completion:^(NSError *loginError) {
+    NSError *loginErr = [[PepperTalk sharedInstance] initialiseWithUsername:_loggedInUserName fullName:[_usernamesDict objectForKey:_loggedInUserName] profilePicture:nil completion:^(NSError *completionErr) {
     }];
 }
 
@@ -118,16 +120,20 @@
     switch (indexPath.row) {
         case 0:
         {
-            //Please note that the chat session will be presented only if login went throught successfully.
-            [[PepperTalk sharedInstance] presentChatSessionWithParticipant:_targetUsername sessionOptons:nil presentingViewController:self];
+            //Please note that the chat session will be presented only if initilisation went through successfully.
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[PepperTalk sharedInstance] presentChatSessionWithParticipant:_targetUsername topicId:@"Some topic id" topicTitle:@"Some topic title" presentingViewController:self];
+            });
         }
             break;
         case 1:
         {
             //Please note that a valid chat session will returned only if login went throught successfully.
-            UIViewController *chatSessionView = [[PepperTalk sharedInstance] chatSessionWithParticipant:_targetUsername sessionOptons:nil error:NULL];
+            UIViewController *chatSessionView = [[PepperTalk sharedInstance] chatSessionWithParticipant:_targetUsername topicId:@"Some topic id" topicTitle:@"Some topic title" error:NULL];
             if(chatSessionView) {
-                [self.navigationController pushViewController:chatSessionView animated:YES];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.navigationController pushViewController:chatSessionView animated:YES];
+                });
             }
         }
             break;
